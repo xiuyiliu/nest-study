@@ -1,10 +1,13 @@
 import { Injectable, HttpService } from '@nestjs/common';
+import {ServiceExt} from '../../utils/serviceExt';
 import {Observable} from 'rxjs';
 import {AxiosResponse} from 'axios';
 
 @Injectable()
-export default class UserService {
-  constructor(private readonly httpService: HttpService) {}
+export default class UserService extends ServiceExt {
+  constructor(private readonly httpService: HttpService) {
+    super();
+  }
   // 支持异步
   public async getQuery(name): Promise<string> {
     return `hello ${name}`;

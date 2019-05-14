@@ -1,5 +1,5 @@
 import { LoggerMiddleware } from './middleware/logger.middleware';
-import { LoggerMiddleware2 } from './middleware/logger2.middleware';
+import { AuthMiddleware} from './middleware/auth.middleware';
 import {
   MiddlewareConsumer,
   Module,
@@ -14,7 +14,7 @@ import module from './modules';
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer): MiddlewareConsumer | void {
     consumer
-      .apply(LoggerMiddleware, LoggerMiddleware2)
+      .apply(LoggerMiddleware, AuthMiddleware)
       .forRoutes({ path: '*', method: RequestMethod.ALL });
   }
 }

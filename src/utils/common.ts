@@ -27,6 +27,6 @@ export function createResData(result = null, code = '200', message = 'success', 
  * @param message
  * @return
  */
-export function createErrData(code = '400', message = 'server error') {
+export function createErrorData(code = '400', message = 'server error') {
   return {code, message, success: false, result: null, other: {}};
 }

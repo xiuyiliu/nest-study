@@ -1,6 +1,6 @@
-import {createResData, createErrData} from './common';
+import {createResData, createErrorData} from './common';
 
-export default class ServiceExt {
+export class ServiceExt {
   readonly createResData = createResData;
-  // readonly createErrData = createErrData;
+  readonly createErrorData = createErrorData;
 }
